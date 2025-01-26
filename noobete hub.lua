@@ -1,102 +1,112 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() 
-local Window = OrionLib:MakeWindow({Name = "Noobete Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "confignoob", IntroEnabled = false}) --[[ Name = - The name of the UI. HidePremium = - Whether or not the user details shows Premium status or not. SaveConfig = - Toggles the config saving in the UI. ConfigFolder = - The name of the folder where the configs are saved. IntroEnabled = false - Whether or not to show the intro animation. IntroText = - Text to show in the intro animation. IntroIcon = - URL to the image you want to use in the intro animation. Icon = - URL to the image you want displayed on the window. CloseCallback = - Function to execute when the window is closed. ]] 
-local Tab = Window:MakeTab({ Name = "Teleports", Icon = "rbxassetid://0", PremiumOnly = false })
-local ESP = Window:MakeTab({ Name = "Esp", Icon = "rbxassetid://0", PremiumOnly = false })
-local SCRIPTS = Window:MakeTab({ Name = "Script-Hub", Icon = "rbxassetid://0", PremiumOnly = false }) --[[ Name = - The name of the tab. Icon = - The icon of the tab. PremiumOnly = - Makes the tab accessible to Sirus Premium users only. ]] 
-local SectionEspMisc = ESP:AddSection({ Name = "Other Esp's" })
-local SectionEspMonster = ESP:AddSection({ Name = "Monster Esp's" })
-SectionEspMonster:AddButton({
+local Window = Rayfield:CreateWindow({
+	Name = "NoobeteHub",
+	Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+	LoadingTitle = "Noobete Hub",
+	LoadingSubtitle = "by NoobehTheScripter",
+	Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+ 
+	DisableRayfieldPrompts = false,
+	DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+ 
+	ConfigurationSaving = {
+	   Enabled = true,
+	   FolderName = nil, -- Create a custom folder for your hub/game
+	   FileName = "Big Hub"
+	},
+ 
+	Discord = {
+	   Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+	   Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+	   RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+	},
+ 
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+	   Title = "Untitled",
+	   Subtitle = "Key System",
+	   Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+	   FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+	   SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+	   GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+	   Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+	}
+ })
+ local TeleportTab = Window:CreateTab("Teleport", 0)
+ local EspTab = Window:CreateTab("Esp", 0)
+ local EspSectionMonster = EspTab:CreateSection("Monster Esp")
+ local EspSectionMisc = EspTab:CreateSection("Misc Esp")
+ local BartEsp = EspSectionMonster:CreateButton({
 	Name = "Bart ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Bart
-  	end    
-})
-SectionEspMonster:AddButton({
+  	end
+ })
+ local HomerEsp = EspSectionMonster:CreateButton({
 	Name = "Homer ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Homer
-  	end    
-})
-SectionEspMonster:AddButton({
+  	end   
+ })
+ local KrustyEsp = EspSectionMonster:CreateButton({
 	Name = "Krusty ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Krusty
-  	end    
-})
-
-SectionEspMonster:AddButton({
+  	end     
+ })
+ local LisaEsp = EspSectionMonster:CreateButton({
 	Name = "Lisa ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Lisa
-  	end    
-})
-
-SectionEspMonster:AddButton({
+  	end  
+ })
+ local MaggieEsp = EspSectionMonster:CreateButton({
 	Name = "Maggie ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Maggie
-  	end    
-})
-
-SectionEspMonster:AddButton({
+  	end  
+ })
+ local MargeEsp = EspSectionMonster:CreateButton({
 	Name = "Marge ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Marge
-  	end    
-})
-
-SectionEspMonster:AddButton({
+  	end   
+ })
+ local MonsterEsp = EspSectionMonster:CreateButton({
 	Name = "Monster ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Monster
-  	end    
-})
-SectionEspMonster:AddButton({
-	Name = "ALL AT ONCE! (RECOMMENDED)",
+  	end  
+ })
+ local MonstersEsp = EspSectionMonster:CreateButton({
+	Name = "ALL AT ONCE! (SEE ENTITYS THROUGH WALLS)",
 	Callback = function()
-      		local BartHIghlight = Instance.new("Highlight")
-            local HomerHIghlight = Instance.new("Highlight")
-            local KrustyHIghlight = Instance.new("Highlight")
-            local MaggieHIghlight = Instance.new("Highlight")
-            local LisaHIghlight = Instance.new("Highlight")
-            local MargeHIghlight = Instance.new("Highlight")
-            local MonsterHIghlight = Instance.new("Highlight")
-            BartHIghlight.Parent = workspace.Ai.Bart
-            HomerHIghlight.Parent = workspace.Ai.Homer
-            KrustyHIghlight.Parent = workspace.Ai.Krusty
-            MaggieHIghlight.Parent = workspace.Ai.Lisa
-            LisaHIghlight.Parent = workspace.Ai.Maggie
-            MargeHIghlight.Parent = workspace.Ai.Marge
-            MonsterHIghlight.Parent = workspace.Ai.Monster
-  	end    
-})
-SectionEspMisc:AddButton({
+		local BartHIghlight = Instance.new("Highlight")
+		local HomerHIghlight = Instance.new("Highlight")
+		local KrustyHIghlight = Instance.new("Highlight")
+		local MaggieHIghlight = Instance.new("Highlight")
+		local LisaHIghlight = Instance.new("Highlight")
+		local MargeHIghlight = Instance.new("Highlight")
+		local MonsterHIghlight = Instance.new("Highlight")
+		BartHIghlight.Parent = workspace.Ai.Bart
+		HomerHIghlight.Parent = workspace.Ai.Homer
+		KrustyHIghlight.Parent = workspace.Ai.Krusty
+		MaggieHIghlight.Parent = workspace.Ai.Lisa
+		LisaHIghlight.Parent = workspace.Ai.Maggie
+		MargeHIghlight.Parent = workspace.Ai.Marge
+		MonsterHIghlight.Parent = workspace.Ai.Monster
+  	end   
+ })
+ local HouseEsp = EspSectionMisc:CreateButton({
 	Name = "Home Esp (Useful for grinding!)",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Map["main house"]
-  	end    
-})
-Tab:AddButton({
-	Name = "Go To Safe Zone (NOT TESTED)",
-	Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 29.0500031, 19.0963135, -816.104553, -0.999890625, 4.06370404e-09, 0.0147880604, 3.90934929e-09, 1, -1.04666844e-08, -0.0147880604, -1.0407728e-08, -0.999890625
-  	end    
-})
-
-
-
-
-
-OrionLib:Init()
-
-
-
---loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
+  	end 
+ })
