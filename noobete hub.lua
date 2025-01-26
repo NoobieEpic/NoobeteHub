@@ -34,58 +34,56 @@ local Window = Rayfield:CreateWindow({
  })
  local TeleportTab = Window:CreateTab("Teleport", 0)
  local EspTab = Window:CreateTab("Esp", 0)
- local EspSectionMonster = EspTab:CreateSection("Monster Esp")
- local EspSectionMisc = EspTab:CreateSection("Misc Esp")
- local BartEsp = EspSectionMonster:CreateButton({
+ local BartEsp = EspTab:CreateButton({
 	Name = "Bart ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Bart
   	end
  })
- local HomerEsp = EspSectionMonster:CreateButton({
+ local HomerEsp = EspTab:CreateButton({
 	Name = "Homer ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Homer
   	end   
  })
- local KrustyEsp = EspSectionMonster:CreateButton({
+ local KrustyEsp = EspTab:CreateButton({
 	Name = "Krusty ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Krusty
   	end     
  })
- local LisaEsp = EspSectionMonster:CreateButton({
+ local LisaEsp = EspTab:CreateButton({
 	Name = "Lisa ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Lisa
   	end  
  })
- local MaggieEsp = EspSectionMonster:CreateButton({
+ local MaggieEsp = EspTab:CreateButton({
 	Name = "Maggie ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Maggie
   	end  
  })
- local MargeEsp = EspSectionMonster:CreateButton({
+ local MargeEsp = EspTab:CreateButton({
 	Name = "Marge ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Marge
   	end   
  })
- local MonsterEsp = EspSectionMonster:CreateButton({
+ local MonsterEsp = EspTab:CreateButton({
 	Name = "Monster ESP",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
             ESPHIghlight.Parent = workspace.Ai.Monster
   	end  
  })
- local MonstersEsp = EspSectionMonster:CreateButton({
+ local MonstersEsp = EspTab:CreateButton({
 	Name = "ALL AT ONCE! (SEE ENTITYS THROUGH WALLS)",
 	Callback = function()
 		local BartHIghlight = Instance.new("Highlight")
@@ -104,7 +102,7 @@ local Window = Rayfield:CreateWindow({
 		MonsterHIghlight.Parent = workspace.Ai.Monster
   	end   
  })
- local HouseEsp = EspSectionMisc:CreateButton({
+ local HouseEsp = EspTab:CreateButton({
 	Name = "Home Esp (Useful for grinding!)",
 	Callback = function()
       		local ESPHIghlight = Instance.new("Highlight")
